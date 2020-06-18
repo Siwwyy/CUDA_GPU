@@ -5,7 +5,7 @@
  💅 <br>
  #CUDA GPU ACCELERATION <br>
 
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.olcf.ornl.gov%2Fwp-content%2Fuploads%2F2019%2F12%2F01-CUDA-C-Basics.pdf&psig=AOvVaw3Y5G3pfIUbTitGYWDG4Ll2&ust=1592564339012000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCeqtKai-oCFQAAAAAdAAAAABAI">
+<img src="REPOSITORY_IMAGES/nvidia_logo.png>
 </a>
 
 </h1>
