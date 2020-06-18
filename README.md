@@ -2,7 +2,7 @@
 
 <div align="center">
 <h1>
- 💅 <p style="font-size:30px">CUDA GPU ACCELERATION</p><br>
+ 💅 <p style="font-size:40%">CUDA GPU ACCELERATION</p><br>
 <a href="https://developer.nvidia.com/cuda-zone">
 <img src="REPOSITORY_IMAGES/nvidia_cuda_logo.jpg">
 </a>
@@ -11,7 +11,7 @@
 </div>
 <br>
 
-## <p style="font-size:100px">CUDA_GPU</p>
+## <p style="font-size:30px">CUDA_GPU</p>
 My journey through the gpu acceleration NVIDIA CUDA language
 
 ### <p style="font-size:20px">Folders</p>
