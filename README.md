@@ -5,7 +5,7 @@
  💅 <br>
  #CUDA GPU ACCELERATION <br>
 
-<img src="REPOSITORY_IMAGES/nvidia_logo.png>
+<img src="REPOSITORY_IMAGES/nvidia_logo.png">
 </a>
 
 </h1>
