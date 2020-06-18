@@ -11,7 +11,7 @@
 </div>
 <br>
 
-## <p style="font-size:20px">CUDA_GPU</p>
+## <p style="font-size:100px">CUDA_GPU</p>
 My journey through the gpu acceleration NVIDIA CUDA language
 
 ### <p style="font-size:20px">Folders</p>
