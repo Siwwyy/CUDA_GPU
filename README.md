@@ -5,9 +5,9 @@
  💅 <br>
  #CUDA GPU ACCELERATION <br>
 
+
 <a href="https://developer.nvidia.com/cuda-zone">
 <img src="REPOSITORY_IMAGES/nvidia_logo.png">
-![alt text](REPOSITORY_IMAGES/cuda_book_sanders.png)
 </a>
 
 </h1>
