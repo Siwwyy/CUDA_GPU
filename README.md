@@ -4,22 +4,10 @@ My journey through the gpu acceleration NVIDIA CUDA language
 <div align="center">
 <h1>
  💅 <br>
- styled-breakpoints <br>
+ CUDA GPU ACCELERATION <br>
 
 <a href="https://travis-ci.org/mg901/styled-breakpoints">
-<img alt="build status" src="https://img.shields.io/travis/mg901/styled-breakpoints/master.svg?style=flat-square">
-</a>
-<a href="https://coveralls.io/github/mg901/styled-breakpoints?branch=master">
-<img alt="coverage status" src="https://img.shields.io/coveralls/github/mg901/styled-breakpoints/master.svg?style=flat-square">
-</a>
-<a href="https://bundlephobia.com/result?p=styled-breakpoints@6.8.0">
-<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/styled-breakpoints.svg?style=flat-square">
-</a>
-<a href="https://img.shields.io/npm/dm/styled-breakpoints?style=flat-square">
-  <img alt="npm downloads" src="https://img.shields.io/npm/dm/styled-breakpoints?style=flat-square">
-</a>
-<a href="https://www.npmjs.com/package/styled-breakpoints">
-<img alt="npm version" src="https://img.shields.io/npm/v/styled-breakpoints.svg?style=flat-square">
+<img alt="build status" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.olcf.ornl.gov%2Fwp-content%2Fuploads%2F2019%2F12%2F01-CUDA-C-Basics.pdf&psig=AOvVaw3Y5G3pfIUbTitGYWDG4Ll2&ust=1592564339012000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCeqtKai-oCFQAAAAAdAAAAABAI">
 </a>
 
 </h1>
