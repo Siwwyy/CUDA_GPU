@@ -2,12 +2,11 @@
 
 <div align="center">
 <h1>
- 💅 <br>
- CUDA GPU ACCELERATION <br>
+ 💅 CUDA GPU ACCELERATION 💅 <br>
 
 
 <a href="https://developer.nvidia.com/cuda-zone">
-<img src="REPOSITORY_IMAGES/nvidia_logo.png">
+<img src="REPOSITORY_IMAGES/nvidia_cuda_logo.png">
 </a>
 
 </h1>
