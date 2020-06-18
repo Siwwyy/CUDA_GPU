@@ -1,8 +1,4 @@
-<div align="center">
-<h1>
 [![Build Status](https://travis-ci.org/adam-p/markdown-it-smartarrows.svg?branch=master)](https://travis-ci.org/adam-p/markdown-it-smartarrows)
-</h1>
-</div>
 
 <div align="center">
 <h1>
