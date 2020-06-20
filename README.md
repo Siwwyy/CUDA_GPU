@@ -16,8 +16,8 @@ My journey through the gpu acceleration NVIDIA CUDA language
 
 # Folders
 
-| First Header  | Second Header |
+| Directory name  | Content | Additional information |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
+| BEGINNER  | Tutorials, first basic projects  |
 | Content Cell  | Content Cell  |
 
