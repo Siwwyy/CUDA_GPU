@@ -18,6 +18,6 @@ My journey through the gpu acceleration NVIDIA CUDA language
 
 | Directory name  | Content | Additional information |
 | ------------- | ------------- |
-| BEGINNER  | Tutorials, first basic projects  |
+| BEGINNER  |  Tutorials, first basic projects  |
 | Content Cell  | Content Cell  |
 
