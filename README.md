@@ -11,10 +11,10 @@
 </div>
 <br>
 
-# <p style="font-size:30px">CUDA_GPU</p>
+# CUDA_GPU
 My journey through the gpu acceleration NVIDIA CUDA language
 
-### Folders
+# Folders
 
 | Directory name  | Content | Additional information |
 | ------------- | ------------- |
