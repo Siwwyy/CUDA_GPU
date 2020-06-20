@@ -18,6 +18,6 @@ My journey through the gpu acceleration NVIDIA CUDA language
 
 | Directory name | Description | Additional information |
 | --- | --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| BEGINNER | Tutorials and books |
+| git diff | Show file differences that haven't been staged | Following "CUDA by Example: An Introduction to General-Purpose GPU Programming" written by Jason Sanders |
 
