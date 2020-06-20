@@ -15,6 +15,7 @@
 My journey through the gpu acceleration NVIDIA CUDA language
 
 ### Folders
+
 | Directory name  | Content | Additional information |
 | ------------- | ------------- |
 | BEGINNER  | Tutorials, first basic projects | Following "CUDA by Example: An Introduction to General-Purpose GPU Programming" written by Jason Sanders |
