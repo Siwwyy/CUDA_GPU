@@ -1,7 +1,3 @@
-
-[![Build Status](https://travis-ci.org/adam-p/markdown-it-smartarrows.svg?branch=master)](https://travis-ci.org/adam-p/markdown-it-smartarrows)
-[![downloads](https://img.shields.io/npm/dm/react-switch-selector)](https://www.npmjs.com/package/react-switch-selector) 
-
 <div align="center">
 <h1>
  💅 <p style="font-size:40%;">CUDA GPU ACCELERATION</p><br>
