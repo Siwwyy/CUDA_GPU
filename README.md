@@ -1,6 +1,6 @@
 
 [![Build Status](https://travis-ci.org/adam-p/markdown-it-smartarrows.svg?branch=master)](https://travis-ci.org/adam-p/markdown-it-smartarrows)
-[![downloads](https://img.shields.io/npm/dm/react-switch-selector)](https://www.npmjs.com/package/react-switch-selector) [![version](https://img.shields.io/github/package-json/v/GR34SE/react-switch-selector)](https://github.com/GR34SE/react-switch-selector) [![HitCount](http://hits.dwyl.com/GR34SE/react-switch-selector.svg)](https://www.npmjs.com/package/react-switch-selector)
+[![downloads](https://img.shields.io/npm/dm/react-switch-selector)](https://www.npmjs.com/package/react-switch-selector) 
 
 <div align="center">
 <h1>
