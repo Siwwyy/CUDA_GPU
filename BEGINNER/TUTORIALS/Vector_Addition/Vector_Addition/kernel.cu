@@ -11,7 +11,7 @@
 #define HostToDevice	cudaMemcpyHostToDevice
 #define DeviceToHost	cudaMemcpyDeviceToHost
 
-constexpr std::size_t Vector_Size = 1 << 4;
+constexpr std::size_t Vector_Size = 1 << 9;
 
 //CPU FUNCTIONS
 
@@ -69,16 +69,19 @@ int main(int argc, char* argv[])
 	cudaMemcpy(d_a, h_a, Vector_Size * sizeof(array_type), HostToDevice);
 	cudaMemcpy(d_b, h_b, Vector_Size * sizeof(array_type), HostToDevice);
 
-	dim3 blocks{ 1 };
-	dim3 threads{ Vector_Size };
 
-	Vector_Addition << <blocks, threads >> > (d_a, d_b, d_c);
-	cudaDeviceSynchronize();
+
+	{
+		dim3 blocks{ static_cast<int>((Vector_Size+127)/128) };
+		dim3 threads{ 128 };
+		Vector_Addition << <blocks, threads >> > (d_a, d_b, d_c);
+		cudaDeviceSynchronize();
+	}
 
 	cudaMemcpy(h_c, d_c, Vector_Size * sizeof(array_type), DeviceToHost);
 
-	std::cout << " \nResult \n";
-	print_array(h_c);
+	//std::cout << " \nResult \n";
+	//print_array(h_c);
 
 	cudaFree(d_a);
 	cudaFree(d_b);
@@ -95,22 +98,26 @@ int main(int argc, char* argv[])
 
 __global__ void Vector_Addition(const float* const vec_a, const float* const vec_b, float* const vec_c)
 {
-	const unsigned int thread_idx = threadIdx.x;
+	unsigned int thread_idx = threadIdx.x + blockIdx.x * blockDim.x;
 	//printf("%d ", thread_idx);
 
-	if (thread_idx < Vector_Size)
+	while (thread_idx < Vector_Size)
 	{
+		printf("%d ", thread_idx);
 		vec_c[thread_idx] = vec_a[thread_idx] + vec_b[thread_idx];
+		thread_idx += blockDim.x * gridDim.x;
 	}
 }
 
 __global__ void Vector_Addition(const int* const vec_a, const int* const vec_b, int* const vec_c)
 {
-	const unsigned int thread_idx = threadIdx.x;
+	unsigned int thread_idx = threadIdx.x + blockIdx.x * blockDim.x;
 	//printf("%d ", thread_idx);
 
-	if (thread_idx < Vector_Size)
+	while (thread_idx < Vector_Size)
 	{
+		printf("%d ", thread_idx);
 		vec_c[thread_idx] = vec_a[thread_idx] + vec_b[thread_idx];
+		thread_idx += blockDim.x * gridDim.x;
 	}
 }
