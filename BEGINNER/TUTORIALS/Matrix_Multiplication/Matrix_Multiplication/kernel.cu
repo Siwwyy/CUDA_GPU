@@ -18,8 +18,8 @@
 //constexpr std::size_t Dim_Y = 1llu << 9llu;
 
 
-constexpr std::size_t Dim_X = 3;
-constexpr std::size_t Dim_Y = 3;
+constexpr std::size_t Dim_X = 4;
+constexpr std::size_t Dim_Y = 4;
 
 //CPU FUNCTIONS
 void Print_Matrix(const std::unique_ptr<std::unique_ptr<int[]>[]>& Matrix);
@@ -56,11 +56,11 @@ int main(int argc, char* argv[])
 		printf("Texture Alignment:  %ld\n", static_cast<long>(prop.textureAlignment));
 
 		printf("   --- MP Information for device %d ---\n", i);
-		printf("Multiprocessor count:  %d\n",prop.multiProcessorCount);
+		printf("Multiprocessor count:  %d\n", prop.multiProcessorCount);
 		printf("Shared mem per mp:  %ld\n", static_cast<long>(prop.sharedMemPerBlock));
 		printf("Registers per mp:  %d\n", prop.regsPerBlock);
 		printf("Threads in warp:  %d\n", prop.warpSize);
-		printf("Max threads per block:  %d\n",prop.maxThreadsPerBlock);
+		printf("Max threads per block:  %d\n", prop.maxThreadsPerBlock);
 		printf("Max thread dimensions:  (%d, %d, %d)\n", prop.maxThreadsDim[0], prop.maxThreadsDim[1], prop.maxThreadsDim[2]);
 		printf("Max grid dimensions:  (%d, %d, %d)\n", prop.maxGridSize[0], prop.maxGridSize[1], prop.maxGridSize[2]);
 		printf_s("\n");
@@ -90,6 +90,9 @@ int main(int argc, char* argv[])
 			Matrix_B[i][j] = static_cast<type>(i * Dim_Y + j + 1);
 		}
 	}
+
+	//Print_Matrix(Matrix_A);
+	//Print_Matrix(Matrix_B);
 
 	//GPU
 	type* Dev_Matrix_A{};
@@ -166,7 +169,9 @@ int main(int argc, char* argv[])
 
 
 
+
 //DEFINITIONS OF FUNCTIONS
+
 
 //CPU
 void Print_Matrix(const std::unique_ptr<std::unique_ptr<int[]>[]>& Matrix)
@@ -180,6 +185,7 @@ void Print_Matrix(const std::unique_ptr<std::unique_ptr<int[]>[]>& Matrix)
 		std::cout << '\n';
 	}
 }
+
 
 
 
@@ -201,38 +207,32 @@ __global__ void Show_Matrix_GPU(const int* const Matrix)
 	printf("Thread id: %d |\n", index);
 }
 
+
 __global__ void Matrix_Multiplication(const int* const Matrix_A, const int* const Matrix_B, int* const Matrix_C)
 {
 	//http://www.ademiller.com/blogs/tech/2010/10/visual-studio-2010-adding-intellisense-support-for-cuda-c/
 
-	const unsigned int id_x = threadIdx.x + blockIdx.x * blockDim.x;
-	const unsigned int id_y = threadIdx.y + blockIdx.y * blockDim.y;
-	unsigned int index = id_x + id_y * blockDim.y;
+	unsigned int id_x = threadIdx.x + blockIdx.x * blockDim.x;
+	unsigned int id_y = threadIdx.y + blockIdx.y * blockDim.y;
+	const unsigned int index = id_y + id_x * blockDim.y;
 	const unsigned int threads_amount = (blockDim.x * gridDim.x) * (blockDim.y * gridDim.y) * (blockDim.z * gridDim.z);
 
-	__shared__ int Buffer[Dim_X * Dim_Y];
+	__shared__ int Buffer[Dim_X * Dim_Y]; //if using a single block
 
-	while (index < Dim_X * Dim_Y)
+	while (id_x < Dim_X && id_y < Dim_Y)
 	{
-		//Matrix_C[index] = Matrix_A[index] + Matrix_B[index];
-
-		Buffer[index] = Matrix_A[index] + Matrix_B[index];
-
-
-
-		//Matrix_C[index] = Buffer[index];
-
-		index += threads_amount;
+		for (std::size_t i = 0; i < blockDim.y; ++i)
+		{
+			Buffer[index] += (Matrix_A[id_x * blockDim.y + i] * Matrix_B[blockDim.y * i + id_y]);
+		}
+		id_x += blockDim.x + gridDim.x;
+		id_y += blockDim.y + gridDim.y;
 	}
 	__syncthreads();
-	index = id_x + id_y * blockDim.y;
 
-	while (index < Dim_X * Dim_Y)
-	{
-		printf("Shared memory value: %d |\n", Buffer[index]);
-		index += threads_amount;
-	}
+	Matrix_C[index] = Buffer[index];
 }
+
 
 __global__ void Matrix_Addition(const int* const Matrix_A, const int* const Matrix_B, int* const Matrix_C)
 {
