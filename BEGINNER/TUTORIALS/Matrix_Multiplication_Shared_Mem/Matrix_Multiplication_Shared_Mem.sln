@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Matrix_Multiplication_Shared_Mem", "Matrix_Multiplication_Shared_Mem\Matrix_Multiplication_Shared_Mem.vcxproj", "{A661C068-44DD-4288-A463-F61A25ABE52E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A661C068-44DD-4288-A463-F61A25ABE52E}.Debug|x64.ActiveCfg = Debug|x64
+		{A661C068-44DD-4288-A463-F61A25ABE52E}.Debug|x64.Build.0 = Debug|x64
+		{A661C068-44DD-4288-A463-F61A25ABE52E}.Release|x64.ActiveCfg = Release|x64
+		{A661C068-44DD-4288-A463-F61A25ABE52E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41E190D4-ACD5-4109-9B82-7E8D6B9ACC13}
+	EndGlobalSection
+EndGlobal
