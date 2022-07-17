@@ -2,7 +2,7 @@
 
 #include "Kernel.cuh"
 
-#include "Cuda_Kernel.cuh"
+
 
 void Cuda_Kernel::kernel_double(double* A, double* B, double* C, const std::size_t& array_size)
 {
@@ -28,3 +28,9 @@ void Cuda_Kernel::kernel_double(double* A, double* B, double* C, const std::size
 
     cudaMemcpy(C, d_C, array_size * sizeof(double), DeviceToHost);
 }
+
+//template<typename Runnable>
+//void Cuda_Kernel::test_function(const Runnable& runnable)
+//{
+//	
+//}

@@ -18,18 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Neuron.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Data.cpp">
+    <ClCompile Include="SOURCE\Math\Activation_Functions\Activation_Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Neuron.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Data.hpp">
+    <ClInclude Include="INCLUDE\Math\Activation_Functions\Activation_Functions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

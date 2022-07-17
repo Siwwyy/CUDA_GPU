@@ -23,6 +23,24 @@ namespace Cuda_Kernel
             C[threadID] = A[threadID] + B[threadID];
         }
     }
+
+    template<typename Callable>
+    __global__ void test_global(Callable const & callable)
+    {
+        callable();
+    }
+
+	template<typename Callable>
+	__host__ void test_host(Callable const& callable)
+    {
+        callable();
+    }
+
+    template<typename Callable>
+    __device__ void test_device(Callable const& callable)
+    {
+        callable();
+    }
 	
 }
 
