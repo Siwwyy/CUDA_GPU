@@ -35,10 +35,12 @@ namespace Cuda_Kernel
 		else if constexpr (device_type_ == device_type::host)
 		{
 			//host
+			test_host<Runnable>(runnable);
 		}
 		else
 		{
 			//device
+			test_device<Runnable>(runnable);
 		}
 	}
 }
