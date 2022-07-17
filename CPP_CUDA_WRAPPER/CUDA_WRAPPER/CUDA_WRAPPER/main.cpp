@@ -6,7 +6,7 @@ template<bool on_cuda, typename Runnable>
 void run_code(Runnable const& runnable)
 {
 	if constexpr (on_cuda) {
-		Cuda_Kernel::test_function<Runnable, device_type::global>(runnable);
+		Cuda_Kernel::test_function<Runnable, device_type::host>(runnable);
 	}
 	else {
 		runnable();
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 	//std::cout << "C = " << C[0] << ", " << C[1] << ", " << C[2] << std::endl;
 
 
-	run_code<true>([]() {});
+	run_code<true>([]() { printf("Called from CPP!\n");  });
 
 	system("pause");
 	return EXIT_SUCCESS;
